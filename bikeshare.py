@@ -1,7 +1,6 @@
 import time
 import calendar
 import pandas as pd
-import numpy as np
 
 CITY_DATA = {
     "chicago": "chicago.csv",
@@ -246,7 +245,8 @@ def raw_data(df):
 
             # Break the loop if the user doesn't want to see more rows
             if show_more.lower() != "yes":
-                break
+                if show_more.lower() != "y":
+                    break
 
 
 def main():
@@ -262,7 +262,8 @@ def main():
 
         restart = input("\nWould you like to restart? Enter yes or no: ")
         if restart.lower() != "yes":
-            break
+            if restart.lower() != "y":
+                break
 
 
 if __name__ == "__main__":
